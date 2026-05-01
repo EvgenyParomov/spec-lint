@@ -1,5 +1,11 @@
 # specward
 
+## 0.1.1
+
+### Patch Changes
+
+- 5e64b0a: Verify Trusted Publishing pipeline (OIDC + provenance) by releasing a no-op patch through GitHub Actions.
+
 ## 0.1.0
 
 ### Minor Changes
