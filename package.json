@@ -1,6 +1,6 @@
 {
   "name": "specward",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CLI tool for spec-driven development: validates spec YAML files against test files using AST analysis (no test execution required)",
   "keywords": [
     "spec",
