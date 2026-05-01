@@ -1,5 +1,5 @@
 {
-  "name": "specmate",
+  "name": "specward",
   "version": "0.1.0",
   "description": "CLI tool for spec-driven development: validates spec YAML files against test files using AST analysis (no test execution required)",
   "keywords": [
@@ -16,13 +16,13 @@
     "testing",
     "ast"
   ],
-  "homepage": "https://github.com/EvgenyParomov/specmate#readme",
+  "homepage": "https://github.com/EvgenyParomov/specward#readme",
   "bugs": {
-    "url": "https://github.com/EvgenyParomov/specmate/issues"
+    "url": "https://github.com/EvgenyParomov/specward/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EvgenyParomov/specmate.git"
+    "url": "git+https://github.com/EvgenyParomov/specward.git"
   },
   "license": "MIT",
   "author": "Evgeny Paromov",
@@ -31,7 +31,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "bin": {
-    "specmate": "./dist/cli.mjs"
+    "specward": "./dist/cli.mjs"
   },
   "exports": {
     ".": {

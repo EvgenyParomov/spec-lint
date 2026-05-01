@@ -1,4 +1,4 @@
-# specmate
+# specward
 
 ## 0.1.0
 

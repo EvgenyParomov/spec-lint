@@ -1,7 +1,7 @@
-# specmate
+# specward
 
-[![npm version](https://img.shields.io/npm/v/specmate.svg)](https://www.npmjs.com/package/specmate)
-[![CI](https://github.com/EvgenyParomov/specmate/actions/workflows/ci.yml/badge.svg)](https://github.com/EvgenyParomov/specmate/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/specward.svg)](https://www.npmjs.com/package/specward)
+[![CI](https://github.com/EvgenyParomov/specward/actions/workflows/ci.yml/badge.svg)](https://github.com/EvgenyParomov/specward/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 CLI-утилита для валидации spec YAML файлов против тестовых файлов. Анализирует тесты через AST (SWC) — без их запуска.
@@ -23,22 +23,22 @@ CLI-утилита для валидации spec YAML файлов против
 ## Установка
 
 ```bash
-npm install --save-dev specmate
+npm install --save-dev specward
 # или
-yarn add -D specmate
+yarn add -D specward
 ```
 
 ## Использование
 
 ```bash
 # Весь проект
-npx specmate
+npx specward
 
 # Один пакет
-npx specmate --cwd packages/feature-flags
+npx specward --cwd packages/feature-flags
 
 # Кастомные паттерны
-npx specmate --specs "*.spec.yaml" --tests "src/__tests__/*.spec.ts"
+npx specward --specs "*.spec.yaml" --tests "src/__tests__/*.spec.ts"
 ```
 
 ### Опции
@@ -85,7 +85,7 @@ specs-unit:                        (любая секция specs-*)
 ## Программное использование
 
 ```typescript
-import { parseSpecFile, parseTestFile, match, report } from 'specmate';
+import { parseSpecFile, parseTestFile, match, report } from 'specward';
 
 const spec = await parseSpecFile('feature.spec.yaml');
 const tests = await parseTestFile('feature.spec.ts');

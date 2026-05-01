@@ -8,7 +8,7 @@ import { parseTestFile } from '../test-parser.js';
 const fixtures = path.resolve(import.meta.dirname, 'fixtures');
 const fixture = (name: string) => path.join(fixtures, name);
 
-describe('specmate', () => {
+describe('specward', () => {
   describe('parseSpecFile', () => {
     it('парсит feature, code и assertions из YAML', async () => {
       const result = await parseSpecFile(fixture('sample.spec.yaml'));
