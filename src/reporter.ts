@@ -9,7 +9,7 @@ export function report(result: MatchResult, cwd: string): boolean {
   const rel = (p: string) => path.relative(cwd, p);
 
   console.log();
-  console.log(chalk.bold('spec-lint Results'));
+  console.log(chalk.bold('specmate Results'));
   console.log(chalk.gray('─'.repeat(60)));
 
   if (specsWithoutTests.length > 0) {

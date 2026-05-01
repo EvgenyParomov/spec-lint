@@ -34,10 +34,10 @@ function parseArgs(argv: string[]): CliArgs {
       args.cwd = path.resolve(argv[++i] as string);
     } else if (arg === '--help' || arg === '-h') {
       console.log(`
-spec-lint - validate spec YAML files against test files
+specmate - validate spec YAML files against test files
 
 Usage:
-  spec-lint [options]
+  specmate [options]
 
 Options:
   --specs <glob>   Glob pattern for spec YAML files (default: "**/*.spec.yaml")
@@ -95,6 +95,6 @@ async function run(): Promise<void> {
 }
 
 run().catch((err: unknown) => {
-  console.error('spec-lint failed:', err);
+  console.error('specmate failed:', err);
   process.exit(1);
 });

@@ -1,5 +1,5 @@
 {
-  "name": "spec-lint",
+  "name": "specmate",
   "version": "0.1.0",
   "description": "CLI tool for spec-driven development: validates spec YAML files against test files using AST analysis (no test execution required)",
   "keywords": [
@@ -16,13 +16,13 @@
     "testing",
     "ast"
   ],
-  "homepage": "https://github.com/EvgenyParomov/spec-lint#readme",
+  "homepage": "https://github.com/EvgenyParomov/specmate#readme",
   "bugs": {
-    "url": "https://github.com/EvgenyParomov/spec-lint/issues"
+    "url": "https://github.com/EvgenyParomov/specmate/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EvgenyParomov/spec-lint.git"
+    "url": "git+https://github.com/EvgenyParomov/specmate.git"
   },
   "license": "MIT",
   "author": "Evgeny Paromov",
@@ -31,7 +31,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "bin": {
-    "spec-lint": "./dist/cli.mjs"
+    "specmate": "./dist/cli.mjs"
   },
   "exports": {
     ".": {

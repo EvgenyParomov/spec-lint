@@ -1,7 +1,7 @@
-# spec-lint
+# specmate
 
-[![npm version](https://img.shields.io/npm/v/spec-lint.svg)](https://www.npmjs.com/package/spec-lint)
-[![CI](https://github.com/EvgenyParomov/spec-lint/actions/workflows/ci.yml/badge.svg)](https://github.com/EvgenyParomov/spec-lint/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/specmate.svg)](https://www.npmjs.com/package/specmate)
+[![CI](https://github.com/EvgenyParomov/specmate/actions/workflows/ci.yml/badge.svg)](https://github.com/EvgenyParomov/specmate/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 CLI-утилита для валидации spec YAML файлов против тестовых файлов. Анализирует тесты через AST (SWC) — без их запуска.
@@ -23,22 +23,22 @@ CLI-утилита для валидации spec YAML файлов против
 ## Установка
 
 ```bash
-npm install --save-dev spec-lint
+npm install --save-dev specmate
 # или
-yarn add -D spec-lint
+yarn add -D specmate
 ```
 
 ## Использование
 
 ```bash
 # Весь проект
-npx spec-lint
+npx specmate
 
 # Один пакет
-npx spec-lint --cwd packages/feature-flags
+npx specmate --cwd packages/feature-flags
 
 # Кастомные паттерны
-npx spec-lint --specs "*.spec.yaml" --tests "src/__tests__/*.spec.ts"
+npx specmate --specs "*.spec.yaml" --tests "src/__tests__/*.spec.ts"
 ```
 
 ### Опции
@@ -85,7 +85,7 @@ specs-unit:                        (любая секция specs-*)
 ## Программное использование
 
 ```typescript
-import { parseSpecFile, parseTestFile, match, report } from 'spec-lint';
+import { parseSpecFile, parseTestFile, match, report } from 'specmate';
 
 const spec = await parseSpecFile('feature.spec.yaml');
 const tests = await parseTestFile('feature.spec.ts');

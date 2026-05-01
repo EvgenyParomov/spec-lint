@@ -1,5 +1,5 @@
-feature: spec-lint
-code: spec-lint
+feature: specmate
+code: specmate
 description: CLI-утилита валидации spec YAML файлов против тестовых файлов. Парсит спеки (YAML) и тесты (AST через SWC), кросс-сверяет assertions и выводит ошибки/предупреждения
 
 specs-unit:
