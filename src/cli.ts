@@ -5,7 +5,7 @@ import fg from 'fast-glob';
 
 import { match } from './matcher.js';
 import { report } from './reporter.js';
-import { parseSpecFile } from './spec-parser.js';
+import { parseSpecFile, type SpecFile } from './spec-parser.js';
 import { parseTestFile, type TestAssertion } from './test-parser.js';
 
 interface CliArgs {
@@ -72,7 +72,21 @@ async function run(): Promise<void> {
     ignore: ['**/node_modules/**', '**/dist/**', '**/fixtures/**'],
   });
 
-  const specFiles = await Promise.all(specPaths.map(parseSpecFile));
+  const specResults = await Promise.allSettled(specPaths.map(parseSpecFile));
+  const specFiles: SpecFile[] = [];
+  let parseFailures = 0;
+  for (let i = 0; i < specResults.length; i++) {
+    const result = specResults[i];
+    if (result?.status === 'fulfilled') {
+      specFiles.push(result.value);
+    } else {
+      parseFailures++;
+      const relPath = path.relative(args.cwd, specPaths[i] ?? '');
+      const reason = result?.reason as { message?: string } | undefined;
+      console.error(`ERROR: failed to parse spec ${relPath}: ${reason?.message ?? reason}`);
+    }
+  }
+
   const testResults = await Promise.allSettled(testPaths.map(parseTestFile));
   const testAssertions: TestAssertion[] = [];
   for (let i = 0; i < testResults.length; i++) {
@@ -89,7 +103,7 @@ async function run(): Promise<void> {
   const result = match(specFiles, testAssertions);
   const passed = report(result, args.cwd);
 
-  if (!passed) {
+  if (!passed || parseFailures > 0) {
     process.exit(1);
   }
 }

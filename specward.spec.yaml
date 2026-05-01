@@ -8,6 +8,7 @@ specs-unit:
     - assert: разделяет assertions по specType и path
     - assert: поддерживает вложенные категории
     - assert: возвращает пустой массив assertions если нет specs- секций
+    - assert: отклоняется с YAMLParseError на битом YAML — CLI ловит per-file и продолжает
 
   parseTestFile:
     - assert: извлекает describe/it иерархию из тестового файла

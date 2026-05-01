@@ -44,6 +44,10 @@ describe('specward', () => {
       expect(result.feature).toBe('empty module');
       expect(result.assertions).toHaveLength(0);
     });
+
+    it('отклоняется с YAMLParseError на битом YAML — CLI ловит per-file и продолжает', async () => {
+      await expect(parseSpecFile(fixture('invalid.spec.yaml'))).rejects.toThrow(/Nested mappings/);
+    });
   });
 
   describe('parseTestFile', () => {
