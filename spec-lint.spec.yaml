@@ -1,0 +1,26 @@
+feature: spec-lint
+code: spec-lint
+description: CLI-утилита валидации spec YAML файлов против тестовых файлов. Парсит спеки (YAML) и тесты (AST через SWC), кросс-сверяет assertions и выводит ошибки/предупреждения
+
+specs-unit:
+  parseSpecFile:
+    - assert: парсит feature, code и assertions из YAML
+    - assert: разделяет assertions по specType и path
+    - assert: поддерживает вложенные категории
+    - assert: возвращает пустой массив assertions если нет specs- секций
+
+  parseTestFile:
+    - assert: извлекает describe/it иерархию из тестового файла
+    - assert: извлекает глубоко вложенные describe блоки
+    - assert: обрабатывает файлы с декораторами (NestJS)
+    - assert: обрабатывает describe.skip и it.only
+    - assert: извлекает строки из template literals без выражений
+
+  match:
+    - assert: матчит по полному пути [feature, ...path, assert]
+    - assert: матчит вложенные категории с вложенными describe
+    - assert: находит спеки без тестов (errors)
+    - assert: находит тесты без спеков (warnings)
+    - assert: матчит по code если feature не совпадает
+    - assert: возвращает нули если нет ни спеков ни тестов
+    - assert: нормализует пробелы при сравнении

@@ -1,0 +1,82 @@
+{
+  "name": "spec-lint",
+  "version": "0.0.0",
+  "description": "CLI tool for spec-driven development: validates spec YAML files against test files using AST analysis (no test execution required)",
+  "keywords": [
+    "spec",
+    "specs",
+    "spec-driven",
+    "sdd",
+    "tdd",
+    "lint",
+    "linter",
+    "yaml",
+    "vitest",
+    "jest",
+    "testing",
+    "ast"
+  ],
+  "homepage": "https://github.com/EvgenyParomov/spec-lint#readme",
+  "bugs": {
+    "url": "https://github.com/EvgenyParomov/spec-lint/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenyParomov/spec-lint.git"
+  },
+  "license": "MIT",
+  "author": "Evgeny Paromov",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "bin": {
+    "spec-lint": "./dist/cli.mjs"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "changeset publish"
+  },
+  "dependencies": {
+    "@swc/core": "^1.15.10",
+    "chalk": "^5.4.0",
+    "fast-glob": "^3.3.0",
+    "yaml": "^2.3.1"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "@types/node": "^22.10.7",
+    "tsdown": "^0.21.10",
+    "typescript": "^5.9.3",
+    "unplugin-swc": "^1.5.9",
+    "vitest": "^4.0.18"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
