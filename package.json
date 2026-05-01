@@ -1,6 +1,6 @@
 {
   "name": "spec-lint",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "CLI tool for spec-driven development: validates spec YAML files against test files using AST analysis (no test execution required)",
   "keywords": [
     "spec",
